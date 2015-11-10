@@ -1,0 +1,17 @@
+{
+  "name": "generator-require-hbs-sass",
+  "version": "1.0.0",
+  "description": "Yeoman Generator that builds out a modular front end website with RequireJS, Grunt, Sass, and Handlebars",
+  "files": [
+    "generators/app"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ben Junya",
+  "keywords": ["yeoman-generator"],
+  "license": "MIT",
+  "dependencies": {
+    "yeoman-generator": "^0.21.1"
+  }
+}
