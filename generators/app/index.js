@@ -50,20 +50,51 @@ module.exports = generators.Base.extend({
     // },
 
     writing: function () {
+        // copy app.js
         this.fs.copyTpl(
-            this.templatePath('views'),
-            this.destinationPath('views'),
-            {title: this.appname }
+            this.templatePath('app.js'),
+            this.destinationPath('app.js')
         );
+        //copy gruntfile
+        this.fs.copyTpl(
+            this.templatePath('Gruntfile.js'),
+            this.destinationPath('Gruntfile.js')
+        );
+        //copy package.json
         this.fs.copyTpl(
             this.templatePath('package.json'),
             this.destinationPath('package.json'),
             {title: this.appname }
         );
+        //copy express bin
         this.fs.copyTpl(
             this.templatePath('bin'),
             this.destinationPath('bin')
         );
+        //copy routes directory
+        this.fs.copyTpl(
+            this.templatePath('routes'),
+            this.destinationPath('routes')
+        );
+        //copy views directory
+        this.fs.copyTpl(
+            this.templatePath('views'),
+            this.destinationPath('views'),
+            {title: this.appname }
+        );
+        //copy public directory
+        this.fs.copyTpl(
+            this.templatePath('public'),
+            this.destinationPath('public')
+        );
 
-    }
+
+
+        // this.gruntfile.insertConfig('jshint', "{files: ['./Gruntfile.js', 'public/javascripts/**/*.js'], options: { reporter: require('jshint-stylish'), globals: { jQuery: true }}");
+        // this.gruntfile.insertConfig('shell', "options: { stderr: true }, runServer: { command: 'npm start & grunt concurrent:fast'}}");
+        // this.gruntfile.insertConfig('watch', "sass: { options: { spawn: true }, files: ['public/stylesheets/**/*.scss'], tasks: ['prettysass:sass', 'sass:dev']}");
+        // this.gruntfile.insertConfig('watch', "js: { options: spawn: true }, files: ['public/javascripts/**/*.js', './Gruntfile.js], tasks: ['jsbeautifier:js', 'jshint']}");
+    },
+
+
 });
