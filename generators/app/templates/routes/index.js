@@ -4,7 +4,7 @@ var util = require('util');
 
 /* GET Index page. */
 router.get('/', function(req, res, next) {
-    res.render('page', {
+    res.render('index', {
         body: "Hello! Welcome to your generated page!",
     });
 });
